@@ -1,24 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
-
-
 import streamlit as st
 import numpy as np
 import pandas as pd
 import plotly.express as px
 
-
-# In[ ]:
-
-
 map_parafie = pd.read_excel('clear.xlsx')
 map_parafie['size'] = np.repeat(15, len(map_parafie['year']))
 
 customdata = np.dstack((map_parafie['Parafia'], map_parafie['SDDR']))
-# In[ ]:
-
 
 fig = px.scatter_mapbox(
     map_parafie,
@@ -40,10 +31,6 @@ fig.update_layout(mapbox_style="open-street-map")
 fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
 fig.layout.updatemenus[0].buttons[0].args[1]['frame']['duration'] = 5000
 fig.show()
-
-
-# In[ ]:
-
 
 st.plotly_chart(fig, use_container_width = True)
 
