@@ -13,7 +13,7 @@ import plotly.express as px
 # In[ ]:
 
 
-map_parafie = pd.read_excel(r'Dane\clear.xlsx')
+map_parafie = pd.read_excel('clear.xlsx')
 map_parafie['size'] = np.repeat(15, len(map_parafie['year']))
 
 customdata = np.dstack((map_parafie['Parafia'], map_parafie['SDDR']))
