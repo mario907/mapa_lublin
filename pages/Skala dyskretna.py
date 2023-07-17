@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 
-map_parafie = pd.read_excel(r'Dane\clear.xlsx')
+map_parafie = pd.read_excel(r'clear.xlsx')
 
 customdata = np.dstack((map_parafie['Parafia'], map_parafie['SDDR']))
 
