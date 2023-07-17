@@ -5,6 +5,14 @@ import plotly.express as px
 
 map_parafie = pd.read_excel(r'clear.xlsx')
 
+map_col = {"Extreme-": "#ee202a", 
+            "Anomalous-": "#f48929", 
+            "Very-": "#f7e829", 
+            "Normal": "#ffffff", 
+            "Very+": "#2fbebb", 
+            "Anomalous+": "#006eb8", 
+            "Extreme+": "#2d3795"}
+
 customdata = np.dstack((map_parafie['Parafia'], map_parafie['SDDR']))
 
 fig = px.scatter_mapbox(
